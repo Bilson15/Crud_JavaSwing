@@ -48,6 +48,14 @@ public class Pedido implements Serializable {
     public void setCliente(Cliente cliente) {
         this.cliente = cliente;
     }
+    
+    public void darDesconto(int codigo, double novoPreco){
+        for(int i = 0; i < this.itemPedidos.size(); i++){
+            if(this.itemPedidos.get(i).getProduto().getCodigo() == codigo){
+                this.itemPedidos.get(i).getProduto().setPreco(novoPreco);
+            }
+        }
+    }
    
 
     

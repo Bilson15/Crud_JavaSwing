@@ -192,9 +192,6 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="txtNomeProduto">
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtNomeProdutoActionPerformed"/>
-              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel8">
               <Properties>
@@ -207,9 +204,6 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="txtPrecoProduto">
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtPrecoProdutoActionPerformed"/>
-              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel10">
               <Properties>
@@ -217,9 +211,6 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="txtCodigoProduto">
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtCodigoProdutoActionPerformed"/>
-              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="cadastarProduto">
               <Properties>
@@ -295,7 +286,7 @@
                   <Group type="102" alignment="1" attributes="0">
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace max="32767" attributes="0"/>
+                              <EmptySpace pref="523" max="32767" attributes="0"/>
                               <Component id="jLabel17" min="-2" pref="314" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="306" max="-2" attributes="0"/>
                               <Component id="cadastarPedido" min="-2" pref="202" max="-2" attributes="0"/>
@@ -305,19 +296,28 @@
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="jScrollPane6" alignment="1" max="32767" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Component id="jLabel18" min="-2" pref="156" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="txtNumeroPedido" min="-2" pref="175" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="102" attributes="0">
+                                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                                  <Group type="102" alignment="0" attributes="0">
+                                                      <Component id="jLabel18" min="-2" pref="156" max="-2" attributes="0"/>
+                                                      <EmptySpace max="-2" attributes="0"/>
+                                                      <Component id="txtNumeroPedido" min="-2" pref="175" max="-2" attributes="0"/>
+                                                  </Group>
+                                                  <Group type="102" alignment="0" attributes="0">
+                                                      <Component id="jLabel19" min="-2" pref="156" max="-2" attributes="0"/>
+                                                      <EmptySpace max="-2" attributes="0"/>
+                                                      <Component id="txtCodigoClientePedido" max="32767" attributes="0"/>
+                                                  </Group>
+                                              </Group>
+                                              <EmptySpace pref="649" max="32767" attributes="0"/>
                                           </Group>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Component id="jLabel19" min="-2" pref="156" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="txtCodigoClientePedido" max="32767" attributes="0"/>
+                                          <Group type="102" alignment="1" attributes="0">
+                                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                              <Component id="jLabel22" min="-2" pref="252" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="263" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
-                                      <EmptySpace pref="649" max="32767" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="AtualizarPedido" alignment="0" min="-2" pref="127" max="-2" attributes="0"/>
                                           <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
@@ -325,11 +325,6 @@
                                               <Component id="RemoverPedido" alignment="0" pref="202" max="32767" attributes="0"/>
                                           </Group>
                                       </Group>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="465" max="-2" attributes="0"/>
-                                      <Component id="jLabel22" min="-2" pref="252" max="-2" attributes="0"/>
-                                      <EmptySpace min="0" pref="471" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
@@ -393,9 +388,6 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="txtNumeroPedido">
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtNumeroPedidoActionPerformed"/>
-              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel18">
               <Properties>
@@ -460,9 +452,6 @@
               </SubComponents>
             </Container>
             <Component class="javax.swing.JTextField" name="txtCodigoClientePedido">
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtCodigoClientePedidoActionPerformed"/>
-              </Events>
             </Component>
           </SubComponents>
         </Container>
@@ -607,24 +596,12 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="txtNome">
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtNomeActionPerformed"/>
-              </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="txtCPF">
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtCPFActionPerformed"/>
-              </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="txtDataNascimento">
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtDataNascimentoActionPerformed"/>
-              </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="txtContato">
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtContatoActionPerformed"/>
-              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel5">
               <Properties>
@@ -706,7 +683,7 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="1" attributes="0">
+                  <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="119" max="-2" attributes="0"/>
@@ -720,14 +697,12 @@
                               <EmptySpace min="-2" pref="288" max="-2" attributes="0"/>
                               <Component id="txtCodigoProdutoCarrinho" min="-2" pref="175" max="-2" attributes="0"/>
                           </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="432" max="-2" attributes="0"/>
+                              <Component id="cadastarCarrinho" min="-2" pref="202" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
-                      <EmptySpace pref="159" max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="alterarPedido1" min="-2" pref="202" max="-2" attributes="0"/>
-                          <Component id="RemoverCarrinho" min="-2" pref="202" max="-2" attributes="0"/>
-                          <Component id="cadastarCarrinho" min="-2" pref="202" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="112" max="-2" attributes="0"/>
+                      <EmptySpace pref="473" max="32767" attributes="0"/>
                   </Group>
                   <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
@@ -761,31 +736,19 @@
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="115" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <EmptySpace min="-2" pref="115" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                                      <Component id="jLabel28" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="txtDescontoCarrinho" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Component id="jLabel24" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                          <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                              <Component id="jLabel28" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtDescontoCarrinho" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="cadastarCarrinho" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-                          </Group>
+                          <Component id="jLabel24" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <Component id="RemoverCarrinho" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="txtCodigoProdutoCarrinho" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="alterarPedido1" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace pref="456" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="68" max="-2" attributes="0"/>
+                      <Component id="txtCodigoProdutoCarrinho" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="79" max="-2" attributes="0"/>
+                      <Component id="cadastarCarrinho" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="353" max="32767" attributes="0"/>
                   </Group>
                   <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
@@ -825,35 +788,16 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="txtCodigoProdutoCarrinho">
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtCodigoProdutoCarrinhoActionPerformed"/>
-              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="cadastarCarrinho">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Cadastar"/>
+                <Property name="text" type="java.lang.String" value="Lan&#xe7;ar Item"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cadastarCarrinhoActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="alterarPedido1">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Alterar"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JButton" name="RemoverCarrinho">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Remover"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="RemoverCarrinhoActionPerformed"/>
-              </Events>
-            </Component>
             <Component class="javax.swing.JTextField" name="txtQuantidadeCarrinho">
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtQuantidadeCarrinhoActionPerformed"/>
-              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel25">
               <Properties>
@@ -866,9 +810,6 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="txtNumeroPedidoCarrinho">
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtNumeroPedidoCarrinhoActionPerformed"/>
-              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel28">
               <Properties>
@@ -876,9 +817,6 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="txtDescontoCarrinho">
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtDescontoCarrinhoActionPerformed"/>
-              </Events>
             </Component>
           </SubComponents>
         </Container>

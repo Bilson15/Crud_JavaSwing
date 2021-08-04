@@ -15,34 +15,34 @@ public class ServicosCrud implements Servicos{
     public double calcularTotal(Pedido pedido) {
         double valor = 0; 
         for (int i = 0; i < pedido.getItemPedidos().size(); i++){
-            valor = pedido.getItemPedidos().get(i).getProduto().getPreco() * pedido.getItemPedidos().get(i).getQuantidade();
+            valor += pedido.getItemPedidos().get(i).getProduto().getPreco() * pedido.getItemPedidos().get(i).getQuantidade();
         }
 
         return valor;
     }
 
     @Override
-    public void calcularDesconto(Pedido pedido, double valorDesconto, int codigo) {
-        for (int i = 0; i < pedido.getItemPedidos().size(); i++){
-            if(pedido.getItemPedidos().get(i).getProduto().getCodigo() == codigo){
-                double preco = pedido.getItemPedidos().get(i).getProduto().getPreco();
-                pedido.getItemPedidos().get(i).getProduto().setPreco((preco += pedido.getItemPedidos().get(i).getProduto().getPreco() * valorDesconto) / 100);
-            }
-        }
+    public double calcularDesconto(ItemPedido itemPedido, double valorDesconto) {
+            
+        double preco = itemPedido.getProduto().getPreco();
+        return (preco -= (itemPedido.getProduto().getPreco() * valorDesconto) / 100);
+
     }
 
     @Override
     public String relatorio(Pedido pedido) {
-        String relatorio = "-------------PEDIDO-------------\n" +
+        String relatorio = "\n-------------PEDIDO-------------\n" +
                            "Código: " + pedido.getCodigo() + "\n" +
                            "Cliente: " + pedido.getCliente().getNome() + "\n" +
-                           "Produto: ";
+                           "Produtos: \n";
         
                         for (int i = 0; i < pedido.getItemPedidos().size(); i++){
-                            relatorio += pedido.getItemPedidos().get(i).getProduto().toString();
+                            relatorio += pedido.getItemPedidos().get(i).getProduto().toString() + 
+                                       " X " + pedido.getItemPedidos().get(i).getQuantidade() + " Subtotal: " + 
+                                        (pedido.getItemPedidos().get(i).getQuantidade() * pedido.getItemPedidos().get(i).getProduto().getPreco()) + "\n";
                         }
                         
-                        relatorio += "\nVALOR TOTAL: " + calcularTotal(pedido);
+                        relatorio += "\nVALOR TOTAL: " + calcularTotal(pedido) + "\n";
         
        return relatorio;         
     }

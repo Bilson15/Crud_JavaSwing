@@ -12,7 +12,7 @@ package com.mycompany.crudprojeto;
 public interface Servicos {
     public abstract double calcularTotal(Pedido pedido);
     
-    public abstract void calcularDesconto(Pedido pedido, double valorDesconto, int codigo);
+    public abstract double calcularDesconto(ItemPedido itemPedido, double valorDesconto);
     
     public abstract String relatorio(Pedido pedido);
 }

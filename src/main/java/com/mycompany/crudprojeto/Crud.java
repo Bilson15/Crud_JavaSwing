@@ -58,13 +58,12 @@ public class Crud extends javax.swing.JFrame {
                     model.addRow(dadosLinha);
                 }
             }
-            
-            
+               
             
     public Crud() {
         
         initComponents();
-        
+
         //Clientes
         File arquivo = new File("clientes.dat");
         File arquivoProdutos = new File("produtos.dat");
@@ -73,10 +72,10 @@ public class Crud extends javax.swing.JFrame {
             FileInputStream fluxoEntradaArquivo = new FileInputStream(arquivo);
             entrada = new ObjectInputStream(fluxoEntradaArquivo);
             clientes = (ArrayList) entrada.readObject();
-           // atualizarActionPerformed();
+        
         } catch(Exception e) {
             JOptionPane.showMessageDialog(this, e.toString(), "Erro!", JOptionPane.ERROR_MESSAGE);
-            //System.exit(1);
+       
             clientes = new ArrayList<>();
         }
         
@@ -86,10 +85,11 @@ public class Crud extends javax.swing.JFrame {
             FileInputStream fluxoEntradaArquivo = new FileInputStream(arquivoProdutos);
             entradaProduto = new ObjectInputStream(fluxoEntradaArquivo);
             produtos = (ArrayList) entradaProduto.readObject();
-           // atualizarActionPerformed();
+            //copiaProdutos = (ArrayList) entradaProduto.readObject();
+           
         } catch(Exception e) {
             JOptionPane.showMessageDialog(this, e.toString(), "Erro!", JOptionPane.ERROR_MESSAGE);
-            //System.exit(1);
+       
             produtos = new ArrayList<>();
         }
         
@@ -98,10 +98,10 @@ public class Crud extends javax.swing.JFrame {
             FileInputStream fluxoEntradaArquivo = new FileInputStream(arquivoPedidos);
             entradaPedidos = new ObjectInputStream(fluxoEntradaArquivo);
             pedidos = (ArrayList) entradaPedidos.readObject();
-           // atualizarActionPerformed();
+     
         } catch(Exception e) {
             JOptionPane.showMessageDialog(this, e.toString(), "Erro!", JOptionPane.ERROR_MESSAGE);
-            //System.exit(1);
+ 
             pedidos = new ArrayList<>();
         }
     } 
@@ -169,8 +169,6 @@ public class Crud extends javax.swing.JFrame {
         jLabel24 = new javax.swing.JLabel();
         txtCodigoProdutoCarrinho = new javax.swing.JTextField();
         cadastarCarrinho = new javax.swing.JButton();
-        alterarPedido1 = new javax.swing.JButton();
-        RemoverCarrinho = new javax.swing.JButton();
         txtQuantidadeCarrinho = new javax.swing.JTextField();
         jLabel25 = new javax.swing.JLabel();
         jLabel26 = new javax.swing.JLabel();
@@ -199,29 +197,11 @@ public class Crud extends javax.swing.JFrame {
         jLabel7.setFont(new java.awt.Font("Copperplate Gothic Bold", 1, 24)); // NOI18N
         jLabel7.setText("Cadastro de Produtos");
 
-        txtNomeProduto.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNomeProdutoActionPerformed(evt);
-            }
-        });
-
         jLabel8.setText("Nome:");
 
         jLabel9.setText("Preço:");
 
-        txtPrecoProduto.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtPrecoProdutoActionPerformed(evt);
-            }
-        });
-
         jLabel10.setText("Código:");
-
-        txtCodigoProduto.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtCodigoProdutoActionPerformed(evt);
-            }
-        });
 
         cadastarProduto.setText("Cadastar");
         cadastarProduto.addActionListener(new java.awt.event.ActionListener() {
@@ -354,12 +334,6 @@ public class Crud extends javax.swing.JFrame {
         jLabel17.setFont(new java.awt.Font("Copperplate Gothic Bold", 1, 24)); // NOI18N
         jLabel17.setText("Novo Pedido");
 
-        txtNumeroPedido.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNumeroPedidoActionPerformed(evt);
-            }
-        });
-
         jLabel18.setText("Código do pedido");
 
         jLabel19.setText("CPF cliente:");
@@ -394,12 +368,6 @@ public class Crud extends javax.swing.JFrame {
         listaPedidos.setRows(5);
         jScrollPane6.setViewportView(listaPedidos);
 
-        txtCodigoClientePedido.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtCodigoClientePedidoActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout pedidoLayout = new javax.swing.GroupLayout(pedido);
         pedido.setLayout(pedidoLayout);
         pedidoLayout.setHorizontalGroup(
@@ -407,7 +375,7 @@ public class Crud extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pedidoLayout.createSequentialGroup()
                 .addGroup(pedidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pedidoLayout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addContainerGap(523, Short.MAX_VALUE)
                         .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 314, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(306, 306, 306)
                         .addComponent(cadastarPedido, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -416,25 +384,27 @@ public class Crud extends javax.swing.JFrame {
                         .addGroup(pedidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane6, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(pedidoLayout.createSequentialGroup()
-                                .addGroup(pedidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(pedidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(pedidoLayout.createSequentialGroup()
-                                        .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(txtNumeroPedido, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(pedidoLayout.createSequentialGroup()
-                                        .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(txtCodigoClientePedido)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 649, Short.MAX_VALUE)
+                                        .addGroup(pedidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addGroup(pedidoLayout.createSequentialGroup()
+                                                .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(txtNumeroPedido, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGroup(pedidoLayout.createSequentialGroup()
+                                                .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(txtCodigoClientePedido)))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 649, Short.MAX_VALUE))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pedidoLayout.createSequentialGroup()
+                                        .addGap(0, 0, Short.MAX_VALUE)
+                                        .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(263, 263, 263)))
                                 .addGroup(pedidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(AtualizarPedido, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(pedidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                         .addComponent(alterarPedido, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(RemoverPedido, javax.swing.GroupLayout.DEFAULT_SIZE, 202, Short.MAX_VALUE))))
-                            .addGroup(pedidoLayout.createSequentialGroup()
-                                .addGap(465, 465, 465)
-                                .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 471, Short.MAX_VALUE)))))
+                                        .addComponent(RemoverPedido, javax.swing.GroupLayout.DEFAULT_SIZE, 202, Short.MAX_VALUE)))))))
                 .addGap(79, 79, 79))
         );
         pedidoLayout.setVerticalGroup(
@@ -480,30 +450,6 @@ public class Crud extends javax.swing.JFrame {
         jLabel3.setText("Data nascimento:");
 
         jLabel4.setText("Contato: ");
-
-        txtNome.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNomeActionPerformed(evt);
-            }
-        });
-
-        txtCPF.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtCPFActionPerformed(evt);
-            }
-        });
-
-        txtDataNascimento.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtDataNascimentoActionPerformed(evt);
-            }
-        });
-
-        txtContato.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtContatoActionPerformed(evt);
-            }
-        });
 
         jLabel5.setFont(new java.awt.Font("Copperplate Gothic Bold", 1, 24)); // NOI18N
         jLabel5.setText("Cadastro de clientes");
@@ -646,31 +592,10 @@ public class Crud extends javax.swing.JFrame {
 
         jLabel24.setText("Número pedido:");
 
-        txtCodigoProdutoCarrinho.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtCodigoProdutoCarrinhoActionPerformed(evt);
-            }
-        });
-
-        cadastarCarrinho.setText("Cadastar");
+        cadastarCarrinho.setText("Lançar Item");
         cadastarCarrinho.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cadastarCarrinhoActionPerformed(evt);
-            }
-        });
-
-        alterarPedido1.setText("Alterar");
-
-        RemoverCarrinho.setText("Remover");
-        RemoverCarrinho.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                RemoverCarrinhoActionPerformed(evt);
-            }
-        });
-
-        txtQuantidadeCarrinho.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtQuantidadeCarrinhoActionPerformed(evt);
             }
         });
 
@@ -678,25 +603,13 @@ public class Crud extends javax.swing.JFrame {
 
         jLabel26.setText("Código Produto:");
 
-        txtNumeroPedidoCarrinho.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNumeroPedidoCarrinhoActionPerformed(evt);
-            }
-        });
-
         jLabel28.setText("Desconto: ");
-
-        txtDescontoCarrinho.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtDescontoCarrinhoActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(119, 119, 119)
@@ -707,13 +620,11 @@ public class Crud extends javax.swing.JFrame {
                         .addComponent(txtDescontoCarrinho, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(288, 288, 288)
-                        .addComponent(txtCodigoProdutoCarrinho, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 159, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(alterarPedido1, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(RemoverCarrinho, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cadastarCarrinho, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(112, 112, 112))
+                        .addComponent(txtCodigoProdutoCarrinho, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(432, 432, 432)
+                        .addComponent(cadastarCarrinho, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(473, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addGap(118, 118, 118)
@@ -738,25 +649,17 @@ public class Crud extends javax.swing.JFrame {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(115, 115, 115)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(115, 115, 115)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jLabel28)
-                                .addComponent(txtDescontoCarrinho, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel24))
-                        .addGap(10, 10, 10))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(cadastarCarrinho)
-                        .addGap(27, 27, 27)))
-                .addComponent(RemoverCarrinho)
-                .addGap(26, 26, 26)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtCodigoProdutoCarrinho, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(alterarPedido1))
-                .addContainerGap(456, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel28)
+                        .addComponent(txtDescontoCarrinho, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel24))
+                .addGap(68, 68, 68)
+                .addComponent(txtCodigoProdutoCarrinho, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(79, 79, 79)
+                .addComponent(cadastarCarrinho)
+                .addContainerGap(353, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addGap(12, 12, 12)
@@ -791,22 +694,6 @@ public class Crud extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void txtNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtNomeActionPerformed
-
-    private void txtCPFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCPFActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtCPFActionPerformed
-
-    private void txtDataNascimentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDataNascimentoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtDataNascimentoActionPerformed
-
-    private void txtContatoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtContatoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtContatoActionPerformed
 
     private void cadastarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastarActionPerformed
                // TODO add your handling code here:
@@ -857,18 +744,6 @@ public class Crud extends javax.swing.JFrame {
         criarTabela();
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void txtNomeProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomeProdutoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtNomeProdutoActionPerformed
-
-    private void txtPrecoProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPrecoProdutoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtPrecoProdutoActionPerformed
-
-    private void txtCodigoProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCodigoProdutoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtCodigoProdutoActionPerformed
-
     private void cadastarProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastarProdutoActionPerformed
 
         int codigo = Integer.parseInt(txtCodigoProduto.getText());
@@ -917,10 +792,6 @@ public class Crud extends javax.swing.JFrame {
         criarTabelaProduto();
     }//GEN-LAST:event_atualizarProdutoActionPerformed
 
-    private void txtNumeroPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNumeroPedidoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtNumeroPedidoActionPerformed
-
     private void cadastarPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastarPedidoActionPerformed
         int codigoPedido = Integer.parseInt(txtNumeroPedido.getText());
         int codigoCliente = Integer.parseInt(txtCodigoClientePedido.getText());
@@ -951,7 +822,20 @@ public class Crud extends javax.swing.JFrame {
     }//GEN-LAST:event_cadastarPedidoActionPerformed
 
     private void RemoverPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RemoverPedidoActionPerformed
-        // TODO add your handling code here:
+        
+        pedidos.remove(pedidos.size() -1 );
+        try {
+                File arquivo = new File("pedidos.dat");
+                FileOutputStream fluxoSaidaArquivo = new FileOutputStream(arquivo);
+                saidaPedidos = new ObjectOutputStream(fluxoSaidaArquivo);
+                saidaPedidos.writeObject(pedidos);
+                saidaPedidos.close();
+                fluxoSaidaArquivo.close();
+                JOptionPane.showMessageDialog(this,"Removido com sucesso !");
+            } catch (IOException ex) {
+                JOptionPane.showMessageDialog(this, ex.toString(), "Erro!", JOptionPane.ERROR_MESSAGE);
+            }
+
     }//GEN-LAST:event_RemoverPedidoActionPerformed
 
     private void AtualizarPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AtualizarPedidoActionPerformed
@@ -968,29 +852,21 @@ public class Crud extends javax.swing.JFrame {
    
     }//GEN-LAST:event_AtualizarPedidoActionPerformed
 
-    private void txtCodigoClientePedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCodigoClientePedidoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtCodigoClientePedidoActionPerformed
-
-    private void txtCodigoProdutoCarrinhoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCodigoProdutoCarrinhoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtCodigoProdutoCarrinhoActionPerformed
-
     private void cadastarCarrinhoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastarCarrinhoActionPerformed
         int numeroPedidoCarrinho = Integer.parseInt(txtNumeroPedidoCarrinho.getText());
         int codigoProduto = Integer.parseInt(txtCodigoProdutoCarrinho.getText());
         int quantidade = Integer.parseInt(txtQuantidadeCarrinho.getText());
         double desconto = Double.parseDouble(txtDescontoCarrinho.getText());
-        
-        
-        
+   
        for(int i =0; i < pedidos.size(); i++){
            if(numeroPedidoCarrinho == pedidos.get(i).getCodigo()){
                for(int x = 0; x < produtos.size(); x++){
                    if(codigoProduto == produtos.get(x).getCodigo()){
                        pedidos.get(i).getItemPedidos().add(new ItemPedido(produtos.get(x), quantidade));
+                       
                        if(desconto != 0){
-                           servicos.calcularDesconto(pedidos.get(i), desconto, codigoProduto);
+                           pedidos.get(i).getItemPedidos().get(pedidos.get(i).getItemPedidos().size() - 1).getProduto().setPreco(servicos.calcularDesconto(pedidos.get(i).getItemPedidos().get(pedidos.get(i).getItemPedidos().size() - 1), desconto)); 
+                        
                        }
                         try {
                             File arquivo = new File("pedidos.dat");
@@ -1009,29 +885,8 @@ public class Crud extends javax.swing.JFrame {
                }
            }
        }
-        
-        
-        
-        
-        
-        
+    
     }//GEN-LAST:event_cadastarCarrinhoActionPerformed
-
-    private void RemoverCarrinhoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RemoverCarrinhoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_RemoverCarrinhoActionPerformed
-
-    private void txtQuantidadeCarrinhoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtQuantidadeCarrinhoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtQuantidadeCarrinhoActionPerformed
-
-    private void txtNumeroPedidoCarrinhoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNumeroPedidoCarrinhoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtNumeroPedidoCarrinhoActionPerformed
-
-    private void txtDescontoCarrinhoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDescontoCarrinhoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtDescontoCarrinhoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1072,12 +927,10 @@ public class Crud extends javax.swing.JFrame {
     private javax.swing.JButton AtualizarPedido;
     private javax.swing.JPanel Cliente;
     private javax.swing.JButton Remover;
-    private javax.swing.JButton RemoverCarrinho;
     private javax.swing.JButton RemoverPedido;
     private javax.swing.JButton RemoverProduto;
     private javax.swing.JButton alterar;
     private javax.swing.JButton alterarPedido;
-    private javax.swing.JButton alterarPedido1;
     private javax.swing.JButton alterarProduto;
     private javax.swing.JButton atualizarProduto;
     private javax.swing.JButton cadastar;
