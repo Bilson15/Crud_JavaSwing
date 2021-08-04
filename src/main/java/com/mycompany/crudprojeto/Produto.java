@@ -16,6 +16,7 @@ public class Produto implements Serializable{
     private int codigo;
     private String nome;
     private double preco;
+    private double precoDesconto;
 
     public Produto(int codigo, String nome, double preco) {
         this.codigo = codigo;
@@ -46,6 +47,15 @@ public class Produto implements Serializable{
     public void setPreco(double preco) {
         this.preco = preco;
     }
+
+    public double getPrecoDesconto() {
+        return precoDesconto;
+    }
+
+    public void setPrecoDesconto(double precoDesconto) {
+        this.precoDesconto = precoDesconto;
+    }
+    
 
     @Override
     public String toString() {

@@ -15,7 +15,7 @@ public class ServicosCrud implements Servicos{
     public double calcularTotal(Pedido pedido) {
         double valor = 0; 
         for (int i = 0; i < pedido.getItemPedidos().size(); i++){
-            valor += pedido.getItemPedidos().get(i).getProduto().getPreco() * pedido.getItemPedidos().get(i).getQuantidade();
+            valor += pedido.getItemPedidos().get(i).getProduto().getPrecoDesconto()* pedido.getItemPedidos().get(i).getQuantidade();
         }
 
         return valor;
@@ -38,8 +38,8 @@ public class ServicosCrud implements Servicos{
         
                         for (int i = 0; i < pedido.getItemPedidos().size(); i++){
                             relatorio += pedido.getItemPedidos().get(i).getProduto().toString() + 
-                                       " X " + pedido.getItemPedidos().get(i).getQuantidade() + " Subtotal: " + 
-                                        (pedido.getItemPedidos().get(i).getQuantidade() * pedido.getItemPedidos().get(i).getProduto().getPreco()) + "\n";
+                                   " X " + pedido.getItemPedidos().get(i).getQuantidade() + " Subtotal: " + 
+                                    (pedido.getItemPedidos().get(i).getQuantidade() * pedido.getItemPedidos().get(i).getProduto().getPrecoDesconto()) + "\n";
                         }
                         
                         relatorio += "\nVALOR TOTAL: " + calcularTotal(pedido) + "\n";
